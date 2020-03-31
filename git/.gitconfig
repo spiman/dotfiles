@@ -1,0 +1,22 @@
+[user]
+  email = spyros.mandekis@market.com
+  name = Spyros Mandekis
+
+[push]
+  default = matching
+
+[alias]
+  br = branch -vv -a --color=auto
+  mrg = merge --no-ff --log -e
+  squash = merge --squash
+  graph = log --pretty --oneline --graph
+	grog = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim black) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(black)%s%C(reset)\"
+  update = !git fetch --prune && git pull --rebase
+  cleanup = !git br | ggrep gone] | awk '{ print $1 }' | xargs -I _ git branch -d _
+  cleanup-force = !git br | ggrep gone] | awk '{ print $1 }' | xargs -I _ git branch -D _
+
+[core]
+  editor = vi
+	excludesfile = /Users/spyros/.gitignore
+[diff]
+	tool = vimdiff3
