@@ -1,6 +1,7 @@
 set -x PATH "/usr/local/opt/coreutils/libexec/gnubin" $PATH
 set -x MANPATH "/usr/local/opt/coreutils/libexec/gnuman" $PATH
 set -x PATH $PATH "$HOME/.git-radar"
+set -x PATH $PATH "$HOME/.jenv"
 set -x EDITOR "/usr/bin/vim"
 
 alias ls="ls --color=always"
@@ -15,6 +16,8 @@ abbr --add consume-stage-leap="kafka-console-consumer --bootstrap-server=stage-l
 abbr --add fuckit="git add . --all; git commit -m '.'"
 
 status --is-interactive; and source (rbenv init -|psub)
+
+status --is-interactive; and source (jenv init -| psub)
 
 function fish_prompt
   set_color green
