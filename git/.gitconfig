@@ -1,5 +1,5 @@
 [user]
-  email = spyros.mandekis@market.com
+  email = s.mandekis@gmail.com
   name = Spyros Mandekis
 
 [push]
@@ -18,5 +18,6 @@
 [core]
   editor = vi
 	excludesfile = /Users/spyros/.gitignore
+
 [diff]
 	tool = vimdiff3

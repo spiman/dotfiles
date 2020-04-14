@@ -9,10 +9,6 @@ alias grep="grep --color=always"
 alias egrep="egrep --color=always"
 alias k="kubectl"
 
-abbr --add consume-bom="kafka-console-consumer --bootstrap-server=bom-central-kafka-1.srv.glispa.com:9092"
-abbr --add consume-leap="kafka-console-consumer --bootstrap-server=leap-central-kafka-1.srv.glispa.com:9092"
-abbr --add consume-stage-bom="kafka-console-consumer --bootstrap-server=stage-bom-central-kafka-1-n15.srv.glispa.com:9092"
-abbr --add consume-stage-leap="kafka-console-consumer --bootstrap-server=stage-leap-kafka-central-1.int.glispa.com:9092"
 abbr --add fuckit="git add . --all; git commit -m '.'"
 
 status --is-interactive; and source (rbenv init -|psub)
