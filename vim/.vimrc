@@ -1,8 +1,19 @@
-execute pathogen#infect()
+set nocompatible
+" Vundle
+filetype off "for vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'preservim/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-commentary'
+
+call vundle#end()
+
 syntax on
 hi Search ctermbg=Red
 filetype plugin indent on
-set nocompatible
 set smartcase
 set splitbelow
 set splitright
@@ -12,7 +23,6 @@ set clipboard=unnamed
 let mapleader=","
 set showcmd
 set notermguicolors
-colorscheme breezy
 set wildignore=*.o,*.a,*.so,*.pyc,*.swp,.git,.git/*,*.class,*/target/*,.idea/
 autocmd BufWritePre * %s/\s\+$//e
 autocmd StdinReadPre * let s:std_in=1
@@ -25,7 +35,3 @@ if executable('ag')
 endif
 " Hack to copy to OSX clipboard
 map <leader>y :w ! pbcopy
-
-" Golang
-autocmd FileType go nmap <leader>b  <Plug>(go-build)
-autocmd FileType go nmap <leader>t  <Plug>(go-test)

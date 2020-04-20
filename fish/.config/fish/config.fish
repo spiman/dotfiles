@@ -1,4 +1,5 @@
 set -x PATH "/usr/local/opt/coreutils/libexec/gnubin" $PATH
+set -x PATH "/usr/local/opt/grep/libexec/gnubin" $PATH
 set -x MANPATH "/usr/local/opt/coreutils/libexec/gnuman" $PATH
 set -x PATH $PATH "$HOME/.git-radar"
 set -x PATH $PATH "$HOME/.jenv"
@@ -9,17 +10,17 @@ alias grep="grep --color=always"
 alias egrep="egrep --color=always"
 alias k="kubectl"
 
-abbr --add fuckit="git add . --all; git commit -m '.'"
+abbr --add fuckit "git add . --all; git commit -m '.'"
 
-status --is-interactive; and source (rbenv init -|psub)
+#status --is-interactive; and source (rbenv init -|psub)
 
 status --is-interactive; and source (jenv init -| psub)
 
 function fish_prompt
-  set_color green
+  set_color brgreen
   echo -n (whoami)
   echo -n ' @ '
-  set_color yellow --underline
+  set_color bryellow --underline
   echo -n (prompt_pwd)
   set_color normal
   echo (git-radar --fish --fetch)
@@ -33,4 +34,3 @@ function sudo
         command sudo $argv
     end
 end
-set -g fish_user_paths "/usr/local/opt/scala@2.12/bin" $fish_user_paths
