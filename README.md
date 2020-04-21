@@ -1,6 +1,7 @@
 Requirements
 ----
 
+- stow
 - tmux
 - vim
 - vundle
