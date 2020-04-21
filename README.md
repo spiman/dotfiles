@@ -6,5 +6,6 @@ Requirements
 - vundle
 - fish
 - fisher
-- fzf
+  - fzf
+  - fish-nvm
 - ripgrep
