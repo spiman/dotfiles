@@ -17,7 +17,7 @@
 
 [core]
   editor = vi
-	excludesfile = /Users/spyros/.gitignore
+  excludesfile = /Users/spyros/.gitignore
 
 [diff]
-	tool = vimdiff3
+  tool = vimdiff3
