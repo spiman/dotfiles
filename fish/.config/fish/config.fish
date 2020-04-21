@@ -5,6 +5,13 @@ set -x PATH $PATH "$HOME/.git-radar"
 set -x PATH $PATH "$HOME/.jenv"
 set -x EDITOR "/usr/bin/vim"
 
+#fzf
+set -x FZF_DEFAULT_COMMAND "rg --files --hidden"
+set -x FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+
+#rg
+set -x RIPGREP_CONFIG_PATH "$HOME/.rgrc"
+
 alias ls="ls --color=always"
 alias grep="grep --color=always"
 alias egrep="egrep --color=always"
