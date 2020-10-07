@@ -18,7 +18,6 @@ alias ls="ls --color=always"
 alias grep="grep --color=always"
 alias egrep="egrep --color=always"
 alias k="kubectl"
-alias kubectx="kubectl config current-context"
 
 abbr --add fuckit "git add . --all; git commit -m '.'"
 
@@ -26,9 +25,6 @@ abbr --add fuckit "git add . --all; git commit -m '.'"
 status --is-interactive; and source (jenv init -| psub)
 
 # i hate this piece of shit language
-set -g fish_user_paths "/usr/local/opt/icu4c/bin" $fish_user_paths
-set -g fish_user_paths "/usr/local/opt/icu4c/sbin" $fish_user_paths
-
 status --is-interactive; and source (pyenv init -| psub)
 
 # Plum GPG
@@ -60,7 +56,3 @@ function sudo
         command sudo $argv
     end
 end
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/spiman/google-cloud-sdk/path.fish.inc' ]; . '/Users/spiman/google-cloud-sdk/path.fish.inc'; end
-set -g fish_user_paths "/usr/local/sbin" $fish_user_paths

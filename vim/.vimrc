@@ -15,6 +15,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'prettier/vim-prettier'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 

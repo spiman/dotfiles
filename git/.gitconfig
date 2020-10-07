@@ -2,6 +2,9 @@
   email = s.mandekis@gmail.com
   name = Spyros Mandekis
 
+[includeIf "gitdir:~/code/plum/"]
+  path = .gitconfig-plum
+
 [push]
   default = matching
 
