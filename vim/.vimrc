@@ -11,11 +11,15 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
+Plugin 'editorconfig/editorconfig-vim'
 
 Plugin 'prettier/vim-prettier'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
 Plugin 'fatih/vim-go'
+
+Plugin 'vim-syntastic/syntastic'
+Plugin 'nvie/vim-flake8'
 
 call vundle#end()
 
@@ -33,12 +37,14 @@ set showcmd
 set wildignore=*.o,*.a,*.so,*.pyc,*.swp,.git,.git/*,*.class,*/target/*,.idea/,node_modules/
 
 " Hack to copy to OSX clipboard
-map <leader>y :w ! pbcopy<CR>
+map <leader>y :w ! xclip -selection clipboard<CR>
 
 map <C-a> :RG<CR>
 map <C-p> :Files<CR>
 
-set rtp+=~/.fzf
+" set rtp+=~/.fzf
+
+let g:fzf_layout = { 'window': { 'height': '50%', 'width': '80%' } }
 let $FZF_DEFAULT_COMMAND="rg --files --hidden"
 
 function! RipgrepFzf(query, fullscreen)

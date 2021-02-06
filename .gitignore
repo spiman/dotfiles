@@ -1,2 +1,5 @@
 .idea
 *.swp
+
+fish/.config/fish
+!fish/.config/fish/config.fish

@@ -1,8 +1,9 @@
-set -x PATH "/usr/local/opt/coreutils/libexec/gnubin" $PATH
-set -x PATH "/usr/local/opt/grep/libexec/gnubin" $PATH
-set -x MANPATH "/usr/local/opt/coreutils/libexec/gnuman" $PATH
+#set -x PATH "/usr/local/opt/coreutils/libexec/gnubin" $PATH
+#set -x PATH "/usr/local/opt/grep/libexec/gnubin" $PATH
+#set -x MANPATH "/usr/local/opt/coreutils/libexec/gnuman" $PATH
 set -x PATH $PATH "$HOME/.git-radar"
-set -x PATH $PATH "$HOME/.jenv"
+set -x PATH $PATH "$HOME/.pyenv/bin"
+#set -x PATH $PATH "$HOME/.jenv"
 set -x EDITOR "/usr/bin/vim"
 
 #fzf
@@ -22,8 +23,8 @@ alias kubectx="kubectl config current-context"
 
 abbr --add fuckit "git add . --all; git commit -m '.'"
 
-#status --is-interactive; and source (rbenv init -|psub)
-status --is-interactive; and source (jenv init -| psub)
+status --is-interactive; and source (rbenv init -|psub)
+#status --is-interactive; and source (jenv init -| psub)
 
 # i hate this piece of shit language
 set -g fish_user_paths "/usr/local/opt/icu4c/bin" $fish_user_paths
@@ -41,7 +42,7 @@ gpgconf --launch gpg-agent
 
 function fish_prompt
   if set -q VIRTUAL_ENV
-    echo -n -s (set_color white) "(" (basename "$VIRTUAL_ENV") ") "
+    echo -n -s (set_color brwhite) "(" (basename "$VIRTUAL_ENV") ") "
   end
   set_color brgreen
   echo -n (whoami)
@@ -60,7 +61,9 @@ function sudo
         command sudo $argv
     end
 end
+set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
+
+eval (direnv hook fish)
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/spiman/google-cloud-sdk/path.fish.inc' ]; . '/Users/spiman/google-cloud-sdk/path.fish.inc'; end
-set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
+if [ -f '/opt/google-cloud-sdk/path.fish.inc' ]; . '/opt/google-cloud-sdk/path.fish.inc'; end
