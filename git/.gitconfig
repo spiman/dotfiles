@@ -18,15 +18,21 @@
   br = branch -vv -a --color=auto
   mrg = merge --no-ff --log -e
   squash = merge --squash
+  amend = commit --amend --no-edit
   graph = log --pretty --oneline --graph
   grog = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim black) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(black)%s%C(reset)\"
   update = !git fetch --prune && git pull --rebase
   cleanup = !git br | grep gone] | awk '{ print $1 }' | xargs -I _ git branch -d _
   cleanup-force = !git br | grep gone] | awk '{ print $1 }' | xargs -I _ git branch -D _
+	d = difftool
 
 [core]
   editor = vi
   excludesfile = ~/.gitignore
 
 [diff]
-  tool = vimdiff3
+	tool = vimdiff3
+[init]
+	defaultBranch = main
+[difftool]
+	prompt = false
